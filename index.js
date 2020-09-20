@@ -8,12 +8,17 @@ if (votingAge > 18) {
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-let weather = "summer";
-weather = "Fall";
-if ((weather = "Fall")) {
-  console.log("I love Fall!");
-} else if ((weather = "Summer")) {
-  console.log("Its too hot!");
+let season = "Summer";
+let favoriteSeason = "Winter";
+season = "Spring";
+favoriteSeason = "Fall";
+season = "Winter";
+
+if (
+  (favoriteSeason === "Spring" && season === "Summer") ||
+  favoriteSeason === "Fall"
+) {
+  console.log("Is the best season!");
 }
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
@@ -190,6 +195,18 @@ letterGrade(77);
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
+
+const vowels = ["e", "o", "a", "i", "u"];
+function count(array, letters) {
+  counted = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(letters)) {
+      counted.push(array[i]);
+    }
+  }
+  return counted;
+}
+console.log(count(vowels, "Hi"));
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
