@@ -49,9 +49,25 @@ console.log(ageInDogYrs(22, 7));
 // > 15lbs - 2% of their body weight
 
 function dogFeeder(weight, age) {
-  if (age <= 0.25 && age <= 0.49) {
+  if (age >= 0.1666666666666667 && age <= 0.3333) {
+    food = age * 0.1;
+  } else if (age >= 0.3333 && age <= 0.58333) {
+    food = age * 0.05;
+  } else if (age >= 0.58333 && age < 1) {
+    food = age * 0.04;
   }
+  if (age >= 1 && weight <= 5) {
+    food = weight * 0.05;
+  } else if (age >= 1 && weight >= 6 && weight <= 10) {
+    food = weight * 0.04;
+  } else if (age >= 1 && weight >= 11 && weight <= 15) {
+    food = weight * 0.03;
+  } else if (age >= 1 && weight > 15) {
+    food = weight * 0.02;
+  }
+  return food;
 }
+console.log(dogFeeder(15, 1));
 
 // Puppies less than 1 year
 // 2 - 4 months 10% of their body weight
@@ -66,6 +82,48 @@ function dogFeeder(weight, age) {
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
+
+let myChoice = ("Rock", "Paper", "Scissors");
+let computerChoice = Math.random();
+if (computerChoice < 0.34) {
+  computerChoice = "Rock";
+} else if (computerChoice <= 0.67) {
+  computerChoice = "Paper";
+} else {
+  computerChoice = "Scissors";
+}
+choice1 = myChoice;
+choice2 = computerChoice;
+
+function rpsGame(choice1, choice2) {
+  if (choice1 === choice2) {
+    return "ITS A TIE!";
+  }
+  if (choice1 === "Rock") {
+    if (choice2 === "Scissors") {
+      return "Rock wins!";
+    } else {
+      return "Paper Wins!";
+    }
+  }
+  if (choice1 === "Paper") {
+    if (choice2 === "Rock") {
+      return "Paper wins!";
+    } else {
+      return "Scissors wins!";
+    }
+  }
+  if (choice1 === "Scissors") {
+    if (choice2 === "Paper") {
+      return "Scissors wins!";
+    } else {
+      return "Rock wins!";
+    }
+  }
+}
+console.log(rpsGame(choice1, choice2));
+rpsGame("Paper", choice2);
+rpsGame("Rock", choice2);
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -89,6 +147,20 @@ console.log(convertTo(3));
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
+
+function annoyingSong(bottles) {
+  for (let i = number; i > 0; i--) {
+    console.log(
+      i,
+      "bottles of soda on the wall",
+      i,
+      "bottles of soda, take one down pass it around",
+      i - 1,
+      "bottles of soda on the wall"
+    );
+  }
+}
+console.log(annoyingSong(4));
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -122,3 +194,43 @@ letterGrade(77);
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+let myChoice = prompt("Rock", "Paper", "Scissors");
+let computerChoice = Math.random();
+if (computerChoice < 0.34) {
+  computerChoice = "Rock";
+} else if (computerChoice <= 0.67) {
+  computerChoice = "Paper";
+} else {
+  computerChoice = "Scissors";
+}
+choice1 = myChoice;
+choice2 = computerChoice;
+
+function rpsGame(choice1, choice2) {
+  if (choice1 === choice2) {
+    return "ITS A TIE!";
+  }
+  if (choice1 === "Rock") {
+    if (choice2 === "Scissors") {
+      return "Rock wins!";
+    } else {
+      return "Paper Wins!";
+    }
+  }
+  if (choice1 === "Paper") {
+    if (choice2 === "Rock") {
+      return "Paper wins!";
+    } else {
+      return "Scissors wins!";
+    }
+  }
+  if (choice1 === "Scissors") {
+    if (choice2 === "Paper") {
+      return "Scissors wins!";
+    } else {
+      return "Rock wins!";
+    }
+  }
+}
+console.log(rpsGame(choice1, choice2));
