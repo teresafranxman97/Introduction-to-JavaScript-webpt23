@@ -250,4 +250,4 @@ function rpsGame(choice1, choice2) {
     }
   }
 }
-console.log(rpsGame(choice1, choice2));
+console.log(rpsGame("Paper", choice2));
